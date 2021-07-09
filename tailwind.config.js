@@ -4,6 +4,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   mode: 'jit',
   purge: ['./public/**/*.html', './src/**/*.{astro,js,jsx,ts,tsx,vue}'],
+  darkMode: 'media',
   theme: {
     screens: {
       sm: '480px',
@@ -19,6 +20,7 @@ module.exports = {
       red: colors.red,
       blue: colors.sky,
       yellow: colors.amber,
+      green: colors.green,
     },
     extend: {
       fontFamily: {

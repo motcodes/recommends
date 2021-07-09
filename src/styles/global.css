@@ -29,18 +29,26 @@
   }
   h2 {
     @apply text-3xl;
+    @apply mb-3;
+    font-weight: 600;
   }
   h3 {
     @apply text-2xl;
+    @apply mb-3;
+    font-weight: 600;
   }
   h4 {
     @apply text-xl;
+    @apply mb-3;
+    font-weight: 600;
   }
   h5 {
     @apply text-lg;
+    @apply mb-3;
   }
   p {
     @apply text-base;
+    @apply mb-6;
   }
   a {
     @apply underline;
@@ -51,6 +59,7 @@
   }
   ul {
     @apply list-disc;
+    @apply mb-6;
   }
   li {
     @apply py-1;
@@ -58,21 +67,22 @@
 }
 
 body {
-  @apply bg-yellow-200;
-  @apply text-yellow-900;
+  @apply bg-gray-50;
+  @apply text-gray-800;
 }
 
+html,
 body,
 #___gatsby,
 #gatsby-focus-wrapper {
   width: 100%;
   min-height: 100vh;
+  height: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    /* background: #522200; */
-    @apply bg-yellow-900;
-    @apply text-yellow-200;
+    @apply text-gray-50;
+    @apply bg-gray-800;
   }
 }

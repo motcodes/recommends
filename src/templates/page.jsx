@@ -1,35 +1,43 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Layout } from '../components/layout';
+import Seo from 'react-seo-component';
+import Layout from '../components/layout';
 import Tag from '../components/Tag';
-import { getOpenGraph } from '../getOpenGraph';
+import { useSiteMetadata } from '../hooks/useMetadata';
 
 export default function PostPage({ data, location }) {
+  const { frontmatter, body, excerpt, slug } = data.mdx;
+  const { title, tags } = frontmatter;
   const {
-    body,
-    frontmatter: { title, tags },
-  } = data.mdx;
+    description,
+    siteTitle,
+    image,
+    siteUrl,
+    siteLanguage,
+    siteLocale,
+    twitterUsername,
+  } = useSiteMetadata();
 
   const currentPage = location.pathname;
   const currentFile =
     currentPage === '/'
       ? 'content/index.mdx'
-      : `content${currentPage.replace(/\/$/, '')}.mdx`;
+      : `content${currentPage.replace(/\/$/, '')}/index.mdx`;
   const editOnGithub = `https://github.com/motcodes/recommends/blob/main/${currentFile}`;
-
-  const [ogData, setOgData] = useState();
-
-  useEffect(() => {
-    const data = getOpenGraph(
-      'https://www.oreilly.com/library/view/javascript-the-good/9780596517748/'
-    );
-    console.log('data :', data);
-    setOgData(data);
-  }, []);
 
   return (
     <Layout editOnGithub={editOnGithub}>
+      <Seo
+        title={siteTitle}
+        description={excerpt || description || ``}
+        image={`${siteUrl}${image}`}
+        pathname={`${siteUrl}/${slug}`}
+        siteLanguage={siteLanguage}
+        siteLocale={siteLocale}
+        twitterUsername={twitterUsername}
+        article={true}
+      />
       <h1 className="mt-0">{title}</h1>
       <ul className="flex gap-1 mb-6 flex-wrap">
         {tags &&
@@ -46,13 +54,15 @@ export default function PostPage({ data, location }) {
 
 export const query = graphql`
   query POST_BY_SLUG($slug: String) {
-    mdx(slug: { regex: $slug }) {
+    mdx(slug: { eq: $slug }) {
       id
-      slug
       body
+      excerpt(pruneLength: 250)
+      slug
       frontmatter {
         tags
         title
+        chapter
       }
     }
   }

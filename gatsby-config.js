@@ -1,24 +1,35 @@
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://recommends.matthiasoberholzer.com',
-    title: '/recommends',
+    siteTitle: '/recommends',
     description: `recommends, as the name says, is a list of recommendations with the purpose to guide my fellow multimedia technology students on their path to becoming a developer.`,
-    author: `@motcodes`,
+    author: `Matthias Oberholzer`,
+    image: `/recommends-cover.png`,
+    siteLanguage: `en-US`,
+    siteLocale: `en_us`,
+    twitterUsername: `@motcodes`,
   },
   plugins: [
-    'gatsby-plugin-sass',
-    'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/icon.png',
       },
     },
-    'gatsby-plugin-mdx',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          default: require.resolve('./src/components/layout.jsx'),
+        },
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -42,13 +53,14 @@ module.exports = {
         name: `content`,
       },
     },
+    `gatsby-plugin-sass`,
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
         postCssPlugins: [
           require('tailwindcss'),
-          require('./tailwind.config.js'), // Optional: Load custom Tailwind CSS configuration
+          require('./tailwind.config.js'),
         ],
       },
     },

@@ -3,7 +3,7 @@ import React from 'react';
 import { useLocation } from '@reach/router';
 import { EditOnGithub } from './editOnGithub';
 
-export function Layout({
+function Layout({
   children,
   className = '',
   headerClassName = '',
@@ -13,7 +13,7 @@ export function Layout({
   const { pathname } = useLocation();
   return (
     <div className={`max-w-2xl mx-auto px-4 ${headerClassName}`}>
-      <header className="py-4">
+      <header className="py-4" style={{ minHeight: 52 }}>
         {pathname !== '/' && (
           <Link
             to="/"
@@ -37,9 +37,11 @@ export function Layout({
           </Link>
         )}
       </header>
-      <main className={`h-screen py-8 ${className}`}>{children}</main>
+      <main className={`min-h-screen h-full py-8 ${className}`}>
+        {children}
+      </main>
       <footer
-        className={`py-10 border-t-2 border-yellow-900 flex justify-between w-full ${footerClassName}`}
+        className={`py-10 border-t-2 border-gray-500 dark:border-gray-100 flex justify-between w-full ${footerClassName}`}
       >
         <p>
           a website by <a href="https://twitter.com/motcodes">@motcodes</a> and
@@ -52,3 +54,5 @@ export function Layout({
     </div>
   );
 }
+
+export default Layout;
