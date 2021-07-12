@@ -3,6 +3,16 @@ import React from 'react';
 import { Code } from './src/components/code';
 
 const components = {
+  h2: ({ children, style, ...rest }) => (
+    <h2 {...rest} style={{ marginTop: 32, ...style }}>
+      {children}
+    </h2>
+  ),
+  h3: ({ children, style, ...rest }) => (
+    <h3 {...rest} style={{ marginTop: 32, ...style }}>
+      {children}
+    </h3>
+  ),
   ul: ({ style, ...rest }) => (
     <ul {...rest} style={{ marginLeft: 16, ...style }} />
   ),
@@ -11,6 +21,31 @@ const components = {
   ),
   'p.inlineCode': (props) => (
     <code style={{ backgroundColor: 'lightgray' }} {...props} />
+  ),
+  a: ({ children, style, ...rest }) => (
+    <a
+      {...rest}
+      target="_blank"
+      rel="noopener"
+      style={{ ...style, display: 'inline-flex', alignItems: 'center' }}
+    >
+      {children}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        style={{ marginLeft: 4, height: 20, width: 20 }}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+        />
+      </svg>
+    </a>
   ),
   pre: ({ children: { props } }) => {
     if (props.mdxType === 'code') {

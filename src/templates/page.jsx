@@ -29,7 +29,8 @@ export default function PostPage({ data, location }) {
   return (
     <Layout editOnGithub={editOnGithub}>
       <Seo
-        title={siteTitle}
+        title={title}
+        titleTemplate={siteTitle}
         description={excerpt || description || ``}
         image={`${siteUrl}${image}`}
         pathname={`${siteUrl}/${slug}`}
