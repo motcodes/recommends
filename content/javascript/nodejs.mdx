@@ -1,0 +1,90 @@
+---
+title: Node.js
+tags: [Node.js, npm, node, bundlers, packages, js]
+---
+
+[Node.js](https://nodejs.org/en/) is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.
+Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser.
+Consequently, Node.js represents a "JavaScript everywhere" paradigm, unifying web-application development around a single programming language, rather than different languages for server-side and client-side scripts.
+
+Node.js has an event-driven architecture capable of asynchronous I/O.
+These design choices aim to optimize throughput and scalability in web applications with many input/output operations, as well as for real-time Web applications.  
+[Source](https://en.wikipedia.org/wiki/Node.js)
+
+## Package Managers
+
+When working with Node.js you will probably use the [npm](https://www.npmjs.com/) package manager to install and manage your dependencies,
+or you will use the [yarn](https://yarnpkg.com/) package manager, which also uses the npm registry.
+It is also possible link a package to a github repository and use it as a dependency, but this is not recommended.
+
+## Bundlers
+
+When using Node.js you will probably use a bundler to bundle your code and to manage your dependencies.
+Why is this a good idea?
+Node.js comes with a lot of modules and a lot of them won't be used in your application.
+A bundler will help you to manage your dependencies and to avoid loading the unused ones.
+This is a critical step in the development process because you will always try to ship a little code as possible, to reduce the size of your application and therefore the time it takes to load it.
+So here is a list of the most popular bundlers:
+
+- [Webpack](https://webpack.js.org/)
+- [Rollup](https://rollupjs.org/)
+- [Parcel](https://parceljs.org/)
+- [Vite.js](https://vitejs.dev/)
+- [ESBuild](https://esbuild.github.io/)
+- [Browserify](http://browserify.org/)
+
+## Useful Packages
+
+Here are only a few package listed since it is impossible to include every good one.
+Also, from here on out every JavaScript Framework I mention in this collection is avialable on npm or should be used in combination Node.js.
+Hopefully this list will grow over time as more of the community will contribute to the list.
+
+### Express
+
+- [Express](https://expressjs.com/) is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+- With a myriad of HTTP utility methods and middleware at your disposal, creating a robust API is quick and easy.
+- Express provides a thin layer of fundamental web application features, without obscuring Node.js features that you know and love.
+
+### Koa
+
+- [Koa](https://koajs.com/) is a new web framework designed by the team behind Express, which aims to be a smaller, more expressive, and more robust foundation for web applications and APIs.
+- By leveraging async functions, Koa allows you to ditch callbacks and greatly increase error-handling.
+- Koa does not bundle any middleware within its core, and it provides an elegant suite of methods that make writing servers fast and enjoyable.
+
+### Socket.io
+
+- [Socket.io](https://socket.io/) is a realtime application framework (RTF) that enables real-time bidirectional event-based communication.
+
+### Prettier
+
+- [Prettier](https://prettier.io/) is an opinionated code formatter.
+- It will format your code to be as close to the style guide as possible, without breaking your code.
+- It will also add semicolons to your code, if you don't have them.
+
+### ESLint
+
+- [ESLint](https://eslint.org/) is a pluggable linting utility for JavaScript.
+- It is a Node.js utility that can automatically maintain your code quality.
+- It can be used as a formatter for your editor.
+
+### Lo-Dash
+
+- [Lo-Dash](https://lodash.com/) is a utility library for JavaScript.
+- It provides a set of helper functions to make JavaScript easier to work with.
+
+### Underscore.js
+
+- [Underscore](https://underscorejs.org/) is a utility-belt library for JavaScript that provides a lot of the functional programming support that you would expect in Prototype.js, but without extending any of the built-in JavaScript objects.
+- It is also the best-known library for functional programming in JavaScript.
+
+### Hapi.js
+
+- [Hapi.js](https://hapijs.com/) is designed to be a simple and secure, yet powerful, way to build modern web applications and services.
+- Originally developed to handle Walmart’s Black Friday scale, hapi continues to be the proven choice for enterprise-grade backend needs.
+
+### Moment.js
+
+- [Moment.js](https://momentjs.com/) is a JavaScript date library for parsing, validating, manipulating, and formatting dates.
+- It is a very popular library for date manipulation.
+
+and many more coming soon...

@@ -61,6 +61,9 @@
     @apply list-disc;
     @apply mb-6;
   }
+  ul ul {
+    @apply mb-0;
+  }
   li {
     @apply py-1;
   }
@@ -76,8 +79,7 @@ body,
 #___gatsby,
 #gatsby-focus-wrapper {
   width: 100%;
-  min-height: 100vh;
-  height: 100%;
+  min-height: 100%;
 }
 
 @media (prefers-color-scheme: dark) {

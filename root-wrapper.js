@@ -13,11 +13,20 @@ const components = {
       {children}
     </h3>
   ),
-  ul: ({ style, ...rest }) => (
-    <ul {...rest} style={{ marginLeft: 16, ...style }} />
+  ul: ({ children, style, ...rest }) => (
+    <ul {...rest} style={{ marginLeft: 16, ...style }}>
+      {children}
+    </ul>
   ),
-  ol: ({ style, ...rest }) => (
-    <ol {...rest} style={{ marginLeft: 16, ...style }} />
+  ol: ({ children, style, ...rest }) => (
+    <ol {...rest} style={{ marginLeft: 16, ...style }}>
+      {children}
+    </ol>
+  ),
+  li: ({ children, style, ...rest }) => (
+    <li {...rest} style={{ lineHeight: '130%', ...style }}>
+      {children}
+    </li>
   ),
   'p.inlineCode': (props) => (
     <code style={{ backgroundColor: 'lightgray' }} {...props} />
@@ -25,8 +34,6 @@ const components = {
   a: ({ children, style, ...rest }) => (
     <a
       {...rest}
-      target="_blank"
-      rel="noopener"
       style={{ ...style, display: 'inline-flex', alignItems: 'center' }}
     >
       {children}

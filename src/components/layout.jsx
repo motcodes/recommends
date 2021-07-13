@@ -47,7 +47,13 @@ function Layout({
           a website by <a href="https://twitter.com/motcodes">@motcodes</a> and
           friends,
           <br /> written in <a href="https://gatsbyjs.com">Gatsby</a> and hosted
-          on <a href="https://vercel.com">Vercel</a>.
+          on <a href="https://vercel.com">Vercel</a>
+          .
+          <br />
+          Also thanks to <a href="https://copilot.github.com">
+            Github Copilot
+          </a>{' '}
+          for writing half of the copy.
         </p>
         <EditOnGithub href={editOnGithub} />
       </footer>
