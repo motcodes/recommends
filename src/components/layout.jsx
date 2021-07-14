@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import { useLocation } from '@reach/router';
 import { EditOnGithub } from './editOnGithub';
+import { Helmet } from 'react-helmet';
 
 function Layout({
   children,
@@ -13,6 +14,12 @@ function Layout({
   const { pathname } = useLocation();
   return (
     <div className={`max-w-2xl mx-auto px-4 ${headerClassName}`}>
+      <Helmet>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.svg" />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+      </Helmet>
       <header className="py-4" style={{ minHeight: 52 }}>
         {pathname !== '/' && (
           <Link
