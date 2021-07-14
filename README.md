@@ -31,13 +31,9 @@ npm run build
 npm run serve
 ```
 
----
-
 ## How to contribute
 
 Please read the [CONTRIBUTE.md](./CONTRIBUTING.md) file
-
----
 
 ## Learn more about Gatsby
 
