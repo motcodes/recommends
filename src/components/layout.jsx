@@ -11,12 +11,12 @@ function Layout({
   footerClassName = '',
   editOnGithub = 'https://github.com/motcodes/recommends',
 }) {
-  const { pathname } = useLocation();
+  const { pathname, origin } = useLocation();
   return (
     <div className={`max-w-2xl mx-auto px-4 ${headerClassName}`}>
       <Helmet>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="alternate icon" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href={`${origin}/favicon.svg`} />
+        <link rel="alternate icon" href={`${origin}/favicon.svg`} />
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
       </Helmet>
