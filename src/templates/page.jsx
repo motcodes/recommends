@@ -22,8 +22,10 @@ export default function PostPage({ data, location }) {
   const currentPage = location.pathname;
   const currentFile =
     currentPage === '/'
-      ? 'content/index.mdx'
-      : `content${currentPage.replace(/\/$/, '')}/index.mdx`;
+      ? 'src/page/index.jsx'
+      : frontmatter.chapter !== null
+      ? `content${currentPage.replace(/\/$/, '')}/index.mdx`
+      : `content${currentPage.replace(/\/$/, '')}.mdx`;
   const editOnGithub = `https://github.com/motcodes/recommends/blob/main/${currentFile}`;
 
   return (
