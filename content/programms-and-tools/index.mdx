@@ -1,39 +1,7 @@
 ---
 title: Programms and Tools
 tags: [Programms, Tools, js]
-chapter: 5
+chapter: 8
 ---
 
-Every programmer uses a bunch of tools to make life easier when writing code and other things. In this list you will find programms, cli-tools, plugins and more.
-
-```jsx
-export default function PostPage({ data, location }) {
-  const {
-    body,
-    frontmatter: { title, tags },
-  } = data.mdx;
-  console.log('data :', data);
-
-  const currentPage = location.pathname;
-  const currentFile =
-    currentPage === '/'
-      ? 'content/index.mdx'
-      : `content${currentPage.replace(/\/$/, '')}.mdx`;
-  const editOnGithub = `https://github.com/motcodes/recommends/blob/main/${currentFile}`;
-
-  return (
-    <Layout editOnGithub={editOnGithub}>
-      <h1 className="mt-0">{title}</h1>
-      <ul className="flex gap-1 mb-6 flex-wrap">
-        {tags &&
-          tags.map((tag) => (
-            <li key={tag} className="inline-flex">
-              <Tag>{tag}</Tag>
-            </li>
-          ))}
-      </ul>
-      <MDXRenderer>{body}</MDXRenderer>
-    </Layout>
-  );
-}
-```
+coming soon...
