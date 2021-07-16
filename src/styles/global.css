@@ -31,16 +31,19 @@
     @apply text-3xl;
     @apply mb-3;
     font-weight: 600;
+    scroll-margin-top: 16px;
   }
   h3 {
     @apply text-2xl;
     @apply mb-3;
     font-weight: 600;
+    scroll-margin-top: 16px;
   }
   h4 {
     @apply text-xl;
     @apply mb-3;
     font-weight: 600;
+    scroll-margin-top: 16px;
   }
   h5 {
     @apply text-lg;

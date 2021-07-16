@@ -28,6 +28,21 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/components/layout.jsx'),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 672,
+            },
+          },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              icon: false,
+              isIconAfterHeader: true,
+            },
+          },
+        ],
       },
     },
     {

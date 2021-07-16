@@ -5,9 +5,10 @@ import Seo from 'react-seo-component';
 import Layout from '../components/layout';
 import Tag from '../components/Tag';
 import { useSiteMetadata } from '../hooks/useMetadata';
+import { TabelOfContents } from '../components/tabelOfContents';
 
 export default function PostPage({ data, location }) {
-  const { frontmatter, body, excerpt, slug } = data.mdx;
+  const { frontmatter, body, excerpt, slug, tableOfContents } = data.mdx;
   const { title, tags } = frontmatter;
   const {
     description,
@@ -50,6 +51,7 @@ export default function PostPage({ data, location }) {
             </li>
           ))}
       </ul>
+      <TabelOfContents data={tableOfContents.items} />
       <MDXRenderer>{body}</MDXRenderer>
     </Layout>
   );
@@ -62,6 +64,7 @@ export const query = graphql`
       body
       excerpt(pruneLength: 250)
       slug
+      tableOfContents
       frontmatter {
         tags
         title
