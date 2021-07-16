@@ -2,7 +2,6 @@ import React from 'react';
 
 export function TabelOfContents({ data }) {
   const smoothScroll = (e, url) => {
-    console.log('url :', url);
     e.preventDefault();
     document.querySelector(url).scrollIntoView({ behavior: 'smooth' });
   };

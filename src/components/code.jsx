@@ -8,7 +8,6 @@ export const Code = ({ codeString, language }) => {
 
   function handleCopy(e) {
     navigator.clipboard.writeText(codeString);
-    console.log('clicked');
     setIsCopied(true);
     setTimeout(() => {
       setIsCopied(false);

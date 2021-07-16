@@ -10,6 +10,7 @@ import { TabelOfContents } from '../components/tabelOfContents';
 export default function PostPage({ data, location }) {
   const { frontmatter, body, excerpt, slug, tableOfContents } = data.mdx;
   const { title, tags } = frontmatter;
+  const { items: tocItems } = tableOfContents;
   const {
     description,
     siteTitle,
@@ -51,7 +52,7 @@ export default function PostPage({ data, location }) {
             </li>
           ))}
       </ul>
-      <TabelOfContents data={tableOfContents.items} />
+      {tocItems && tocItems.length > 1 && <TabelOfContents data={tocItems} />}
       <MDXRenderer>{body}</MDXRenderer>
     </Layout>
   );
