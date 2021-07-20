@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://recommends.matthiasoberholzer.com',
     siteTitle: '/recommends',
-    description: `recommends, as the name says, is a list of recommendations with the purpose to guide my fellow multimedia technology students on their path to becoming a developer.`,
+    description: `recommends, as the name says, is a collection of recommendations with the purpose to guide my fellow multimedia technology students on their path to becoming a developer.`,
     author: `Matthias Oberholzer`,
     image: `/recommends-cover.png`,
     siteLanguage: `en-US`,

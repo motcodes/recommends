@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby';
 import React from 'react';
+import { graphql } from 'gatsby';
 import Seo from 'react-seo-component';
 import Layout from '../components/layout';
 import { useSiteMetadata } from '../hooks/useMetadata';
@@ -8,8 +8,8 @@ export default function IndexPage({ data }) {
   const { nodes } = data.allMdx;
 
   const {
-    description,
     siteTitle,
+    description,
     image,
     siteUrl,
     siteLanguage,
@@ -30,20 +30,21 @@ export default function IndexPage({ data }) {
         twitterUsername={twitterUsername}
       />
       <div className="mb-10">
-        <h1 className="mt-0 mb-2">{siteTitle}</h1>
-        <p>{description}</p>
+        <h1 className="mt-0 mb-2">/recommends</h1>
+        <p>
+          recommends, as the name says, is a collection of recommendations with
+          the purpose to guide my fellow multimedia technology students on their
+          path to becoming a developer 👩‍💻
+        </p>
       </div>
       <ul className="list-none">
-        {nodes &&
-          nodes
-            .filter((node) => node.frontmatter.chapter !== null)
-            .map((page) => (
-              <li key={page.slug} className="text-xl my-1">
-                <a href={`/${page.slug}`} className="">
-                  {page.frontmatter.title}
-                </a>
-              </li>
-            ))}
+        {nodes.map((page) => (
+          <li key={page.slug} className="text-xl my-1">
+            <a href={`/${page.slug}`} className="">
+              {page.frontmatter.title}
+            </a>
+          </li>
+        ))}
       </ul>
     </Layout>
   );
@@ -51,7 +52,10 @@ export default function IndexPage({ data }) {
 
 export const query = graphql`
   query INDEX_QUERY {
-    allMdx(sort: { fields: frontmatter___chapter }) {
+    allMdx(
+      sort: { fields: frontmatter___chapter }
+      filter: { frontmatter: { chapter: { ne: null } } }
+    ) {
       nodes {
         slug
         frontmatter {
