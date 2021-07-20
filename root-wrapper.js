@@ -14,12 +14,12 @@ const components = {
     </h3>
   ),
   ul: ({ children, style, ...rest }) => (
-    <ul {...rest} style={{ marginLeft: 16, ...style }}>
+    <ul {...rest} style={{ marginLeft: 24, ...style }}>
       {children}
     </ul>
   ),
   ol: ({ children, style, ...rest }) => (
-    <ol {...rest} style={{ marginLeft: 16, ...style }}>
+    <ol {...rest} style={{ marginLeft: 24, ...style }}>
       {children}
     </ol>
   ),
@@ -29,7 +29,18 @@ const components = {
     </li>
   ),
   'p.inlineCode': (props) => (
-    <code style={{ backgroundColor: 'lightgray' }} {...props} />
+    <code
+      style={{
+        backgroundColor: '#777',
+        padding: '2px 4px',
+        borderRadius: 4,
+        color: 'white',
+      }}
+      {...props}
+    />
+  ),
+  iframe: ({ style, ...props }) => (
+    <iframe style={{ marginBottom: 48, ...style }} {...props} />
   ),
   a: ({ children, style, ...rest }) => (
     <a
