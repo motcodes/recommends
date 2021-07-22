@@ -1,0 +1,46 @@
+---
+title: Computer Graphics
+tags:
+  [
+    OpenGL,
+    GLSL,
+    C++,
+    OpenTK,
+    Shading,
+    Lighting,
+    Rendering,
+    Phong,
+    PBR,
+    WebGL,
+    Ray Marching,
+  ]
+chapter: 7
+---
+
+Computer Graphics is often seen as one of the hardest subjects to learn. This page will focus on OpenGL which is the library that is also used in the courses.
+
+## OpenGL Tutorials
+
+OpenGL is a graphics library that allows us to tell the GPU what to render to the screen and how to do it. These sites give a good entry point to build a solid base of knowledge.
+
+- [Official Intro Page](https://www.khronos.org/opengl/wiki/Getting_Started) - The official introduction from the developers of OpenGL. It gives you a general heads up and links a whole bunch of tutorial pages and other resources to get started.
+- [OpenGL Tutorial](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/) - The tutorials on this site alone would probably be enough to learn everything you need to make a simple graphics engine. They are also written quite pragmatically and focus on the code rather than background info.
+- [Learn OpenGL](https://learnopengl.com/Introduction) - Another well made and huge collection of tutorials, covering anything from basics to really complex. These are more in depth than the ones from the previous site, with more background info.
+- [OpenTK Tutorial](https://opentk.net/learn/index.html) - Since some lecturers prefer OpenTK to teach the basics, here is also a guide to that.
+
+## Improved Lighting
+
+Probably the most important part of rendering 3D objects is lighting. Since every tutorial covers some basic lighting techniques anyway, here are more specialized sources to get some actually good renders on the screen instead of a colored blob with highlights.
+
+- [Phong Shading Walkthrough](https://github.com/stackgl/glsl-lighting-walkthrough) - An amazing guide through an example phong shader with lots of comments. Don't forget to also take a look at the finished [vertex](https://github.com/stackgl/glsl-lighting-walkthrough/blob/master/lib/shaders/phong.vert) and [fragment](https://github.com/stackgl/glsl-lighting-walkthrough/blob/master/lib/shaders/phong.frag) shader files.
+- [PBR Introduction](https://learnopengl.com/PBR/Theory) - PBR (Physically Based Rendering) tries to more closely resemble the way light behaves in reality to get more realistic renders.
+- [Advanced Lighting Techniques](https://learnopengl.com/Advanced-Lighting/Advanced-Lighting) - A collection of advanced topics like shadows, parallaxes and so on.
+
+## Interesting Resources
+
+Some more sources that might be of interest to some.
+
+- [Text Rendering](https://learnopengl.com/In-Practice/Text-Rendering) - Most people will at some point want to render text to the screen, so here is a guide for that.
+- [Making a 2D Game](https://learnopengl.com/In-Practice/2D-Game/Breakout) - A tutorial about making "Breakout" with OpenGL.
+- [WebGL Tutorial](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial) - WebGL is the javascript binding of OpenGL. If you want to render stuff on a website, click here.
+- [Ray Marching Introduction](http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/) - Ray Marching is a special technique to procedurally generate geometry without polygons.
