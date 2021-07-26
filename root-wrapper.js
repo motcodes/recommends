@@ -24,7 +24,7 @@ const components = {
     </ol>
   ),
   li: ({ children, style, ...rest }) => (
-    <li {...rest} style={{ lineHeight: '130%', ...style }}>
+    <li {...rest} style={{ lineHeight: '150%', ...style }}>
       {children}
     </li>
   ),
