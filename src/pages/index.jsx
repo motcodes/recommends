@@ -41,9 +41,15 @@ export default function IndexPage({ data }) {
         {nodes.map((page) => (
           <li
             key={page.slug}
-            className="text-base my-1 px-3 text-center w-36 h-32 shadow-md hover:shadow-lg transition duration-300 flex items-center justify-center rounded-md cursor-pointer bg-white"
+            className="text-base my-1 px-3 text-center w-36 h-32 shadow-md transition duration-300 flex items-center justify-center rounded-md cursor-pointer border-2 border-white bg-white dark:bg-gray-900 dark:border-gray-900 hover:border-yellow-500"
           >
             <a href={`/${page.slug}`} className="no-underline">
+              {page.frontmatter.icon && (
+                <>
+                  <span>{page.frontmatter.icon}</span>
+                  <br />
+                </>
+              )}
               {page.frontmatter.title}
             </a>
           </li>
@@ -65,6 +71,7 @@ export const query = graphql`
           tags
           title
           chapter
+          icon
         }
       }
     }
