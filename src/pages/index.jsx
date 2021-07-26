@@ -30,7 +30,9 @@ export default function IndexPage({ data }) {
         twitterUsername={twitterUsername}
       />
       <div className="mb-10">
-        <h1 className="mt-0 mb-2">/recommends</h1>
+        <h1 className="mt-0 mb-2">
+          <span>📓</span> /recommends
+        </h1>
         <p>
           recommends, as the name says, is a collection of recommendations with
           the purpose to guide my fellow multimedia technology students on their
@@ -41,7 +43,7 @@ export default function IndexPage({ data }) {
         {nodes.map((page) => (
           <li
             key={page.slug}
-            className="text-base my-1 px-3 text-center w-36 h-32 shadow-md transition duration-300 flex items-center justify-center rounded-md cursor-pointer border-2 border-white bg-white dark:bg-gray-900 dark:border-gray-900 hover:border-yellow-500"
+            className="text-base px-3 text-center w-36 h-32 shadow-md transition duration-300 flex items-center justify-center rounded-md cursor-pointer border-2 border-white bg-white dark:bg-gray-900 dark:border-gray-900 hover:border-yellow-500"
           >
             <a href={`/${page.slug}`} className="no-underline">
               {page.frontmatter.icon && (
