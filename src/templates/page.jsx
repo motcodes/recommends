@@ -9,7 +9,7 @@ import { TabelOfContents } from '../components/tabelOfContents';
 
 export default function PostPage({ data, location }) {
   const { frontmatter, body, excerpt, slug, tableOfContents } = data.mdx;
-  const { title, tags } = frontmatter;
+  const { title, tags, icon } = frontmatter;
   const { items: tocItems } = tableOfContents;
   const {
     description,
@@ -43,7 +43,9 @@ export default function PostPage({ data, location }) {
         twitterUsername={twitterUsername}
         article={true}
       />
-      <h1 className="mt-0">{title}</h1>
+      <h1 className="mt-0">
+        {icon && <span>{icon}</span>} {title}
+      </h1>
       <ul className="flex gap-1 mb-6 flex-wrap">
         {tags &&
           tags.map((tag) => (
@@ -70,6 +72,7 @@ export const query = graphql`
         tags
         title
         chapter
+        icon
       }
     }
   }
