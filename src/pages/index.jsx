@@ -39,19 +39,17 @@ export default function IndexPage({ data }) {
           path to becoming a developer 👩‍💻
         </p>
       </div>
-      <ul className="list-none flex flex-wrap gap-4 justify-center">
+      <ul className="list-none flex flex-wrap gap-4 justify-center ">
         {nodes.map((page) => (
           <li
             key={page.slug}
-            className="text-base px-3 text-center w-36 h-32 shadow-md transition duration-300 flex items-center justify-center rounded-md cursor-pointer border-2 border-white bg-white dark:bg-gray-900 dark:border-gray-900 hover:border-yellow-500"
+            className="text-base text-center w-36 h-32 shadow-md transition duration-300  rounded-md cursor-pointer border-2 border-white bg-white dark:bg-gray-900 dark:border-gray-900 hover:border-yellow-500"
           >
-            <a href={`/${page.slug}`} className="no-underline">
-              {page.frontmatter.icon && (
-                <>
-                  <span>{page.frontmatter.icon}</span>
-                  <br />
-                </>
-              )}
+            <a
+              href={`/${page.slug}`}
+              className="flex flex-col items-center justify-center no-underline px-3 w-full h-full"
+            >
+              {page.frontmatter.icon && <span>{page.frontmatter.icon}</span>}
               {page.frontmatter.title}
             </a>
           </li>
