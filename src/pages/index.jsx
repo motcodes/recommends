@@ -30,20 +30,26 @@ export default function IndexPage({ data }) {
         twitterUsername={twitterUsername}
       />
       <div className="mb-10">
-        <h1 className="mt-0 mb-2">/recommends</h1>
+        <h1 className="mt-0 mb-2">
+          <span>📓</span> /recommends
+        </h1>
         <p>
           recommends, as the name says, is a collection of recommendations with
           the purpose to guide my fellow multimedia technology students on their
           path to becoming a developer 👩‍💻
         </p>
       </div>
-      <ul className="list-none flex flex-wrap gap-4 justify-center">
+      <ul className="list-none flex flex-wrap gap-4 justify-center ">
         {nodes.map((page) => (
           <li
             key={page.slug}
-            className="text-base my-1 px-3 text-center w-36 h-32 shadow-md hover:shadow-lg transition duration-300 flex items-center justify-center rounded-md cursor-pointer bg-white"
+            className="text-base text-center w-36 h-32 shadow-md transition duration-300  rounded-md cursor-pointer border-2 border-white bg-white dark:bg-gray-900 dark:border-gray-900 hover:border-yellow-500"
           >
-            <a href={`/${page.slug}`} className="no-underline">
+            <a
+              href={`/${page.slug}`}
+              className="flex flex-col items-center justify-center no-underline px-3 w-full h-full"
+            >
+              {page.frontmatter.icon && <span>{page.frontmatter.icon}</span>}
               {page.frontmatter.title}
             </a>
           </li>
@@ -65,6 +71,7 @@ export const query = graphql`
           tags
           title
           chapter
+          icon
         }
       }
     }
