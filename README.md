@@ -4,6 +4,10 @@ recommends, as the name says, is a list of recommendations with the purpose to g
 
 recommends uses the React Framework [Gatsby](https://gatsbyjs.com) in combination with [MDX](https://mdxjs.com/) and [Tailwind](https://tailwindcss.com/).
 
+## How to contribute
+
+Please read the [CONTRIBUTE.md](./CONTRIBUTING.md) file
+
 ## How to run
 
 ```bash
@@ -31,9 +35,9 @@ npm run build
 npm run serve
 ```
 
-## How to contribute
+## Request feature or topic
 
-Please read the [CONTRIBUTE.md](./CONTRIBUTING.md) file
+If you want to request a new feature or topic open a [discussion](https://github.com/motcodes/recommends/discussions). 
 
 ## Learn more about Gatsby
 
