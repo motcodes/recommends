@@ -1,8 +1,7 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
 import { useLocation } from '@reach/router';
 import { EditOnGithub } from './editOnGithub';
-import { Helmet } from 'react-helmet';
 
 function Layout({
   children,
@@ -11,15 +10,9 @@ function Layout({
   footerClassName = '',
   editOnGithub = 'https://github.com/motcodes/recommends',
 }) {
-  const { pathname, origin } = useLocation();
+  const { pathname } = useLocation();
   return (
     <div className={`max-w-2xl mx-auto px-4 ${headerClassName}`}>
-      <Helmet>
-        <link rel="icon" type="image/svg+xml" href={`${origin}/favicon.svg`} />
-        <link rel="alternate icon" href={`${origin}/favicon.svg`} />
-        <meta name="robots" content="index,follow" />
-        <meta name="googlebot" content="index,follow" />
-      </Helmet>
       <header className="py-4" style={{ minHeight: 52 }}>
         {pathname !== '/' && (
           <Link
