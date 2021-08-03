@@ -2,15 +2,17 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://recommends.matthiasoberholzer.com',
     siteTitle: '/recommends',
-    description: `recommends, as the name says, is a collection of recommendations with the purpose to guide my fellow multimedia technology students on their path to becoming a developer.`,
-    author: `Matthias Oberholzer`,
+    description: `recommends is a collection of recommendations with the purpose to guide my fellow multimedia technology students on their path to becoming a developer.`,
+    titleTemplate:
+      'a collection of recommendations and useful links by @motcodes',
     image: `/recommends-cover.png`,
     siteLanguage: `en-US`,
-    siteLocale: `en_us`,
+    siteLocale: `de_at`,
+    author: `Matthias Oberholzer`,
     twitterUsername: `@motcodes`,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-react-helmet-async',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',

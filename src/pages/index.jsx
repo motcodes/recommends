@@ -1,34 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Seo from 'react-seo-component';
 import Layout from '../components/layout';
-import { useSiteMetadata } from '../hooks/useMetadata';
+import { Seo } from '../components/seo';
 
 export default function IndexPage({ data }) {
   const { nodes } = data.allMdx;
 
-  const {
-    siteTitle,
-    description,
-    image,
-    siteUrl,
-    siteLanguage,
-    siteLocale,
-    twitterUsername,
-  } = useSiteMetadata();
-
   return (
     <Layout>
-      <Seo
-        title={siteTitle}
-        titleTemplate={'a collection of recommendations and useful links'}
-        description={description || ``}
-        image={`${siteUrl}${image}`}
-        pathname={siteUrl}
-        siteLanguage={siteLanguage}
-        siteLocale={siteLocale}
-        twitterUsername={twitterUsername}
-      />
+      <Seo />
       <div className="mb-10">
         <h1 className="mt-0 mb-2">
           <span>📓</span> /recommends

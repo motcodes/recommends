@@ -1,25 +1,17 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Seo from 'react-seo-component';
 import Layout from '../components/layout';
 import Tag from '../components/Tag';
 import { useSiteMetadata } from '../hooks/useMetadata';
 import { TabelOfContents } from '../components/tabelOfContents';
+import { Seo } from '../components/seo';
 
 export default function PostPage({ data, location }) {
   const { frontmatter, body, excerpt, slug, tableOfContents } = data.mdx;
-  const { title, tags, icon } = frontmatter;
+  const { title, tags, icon, image } = frontmatter;
   const { items: tocItems } = tableOfContents;
-  const {
-    description,
-    siteTitle,
-    image,
-    siteUrl,
-    siteLanguage,
-    siteLocale,
-    twitterUsername,
-  } = useSiteMetadata();
+  const { siteUrl } = useSiteMetadata();
 
   const currentPage = location.pathname;
   const currentFile =
@@ -30,18 +22,16 @@ export default function PostPage({ data, location }) {
       : `content${currentPage.replace(/\/$/, '')}.mdx`;
   const editOnGithub = `https://github.com/motcodes/recommends/blob/main/${currentFile}`;
 
+  const pageTitle = icon ? `${icon} ${title}` : title;
+
   return (
     <Layout editOnGithub={editOnGithub}>
       <Seo
-        title={title}
-        titleTemplate={siteTitle}
-        description={excerpt || description || ``}
-        image={`${siteUrl}${image}`}
+        title={pageTitle}
+        description={excerpt}
+        image={image}
         pathname={`${siteUrl}/${slug}`}
-        siteLanguage={siteLanguage}
-        siteLocale={siteLocale}
-        twitterUsername={twitterUsername}
-        article={true}
+        article
       />
       <h1 className="mt-0">
         {icon && <span>{icon}</span>} {title}
@@ -71,6 +61,7 @@ export const query = graphql`
       frontmatter {
         tags
         title
+        image
         chapter
         icon
       }
