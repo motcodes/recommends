@@ -21,7 +21,7 @@ Pull requests are the best way to propose changes to the codebase and we activel
 5. Push changes to your fork
 6. Open a PR in our [repository](https://github.com/motcodes/recommends/pulls)
 
-## Report bugs using Github's [issues](https://github.com/motcodes/recommends/issues)
+## Report bugs using GitHub's [issues](https://github.com/motcodes/recommends/issues)
 
 We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/motcodes/recommends/issues/new/choose); it's that easy!
 
